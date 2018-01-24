@@ -34,4 +34,32 @@ iris3 %>% dim()
 iris %>% filter(Sepal.Length > 5) %>% dim()
 history
 history(100)
+iris %>% group_by(Species) %>% summarize(mean(Sepal.Length))
+iris %>% group_by(Species) %>% summarize(mean(Sepal.Length),var(Sepal.Length),sd(Sepal.Length))
+iris %>% group_by(Species) %>% summarize(mean(Sepal.Length),var(Sepal.Length),sd(Sepal.Length))
+iris %>% group_by(Species) %>% summarize(mean(Sepal.Length),var(Sepal.Length),sd(Sepal.Length),median(Sepal.Length))
+iris %>% group_by(Species) %>% summarize(meanSL = mean(Sepal.Length))
+iris %>% group_by(Species) %>% summarize(varSl = var(Sepal.Length))
+iris %>% group_by(Species) %>% summarize(sdSL = sd(Sepal.Length))
+iris %>% group_by(Species) %>% summarize(medianSL = median(Sepal.Length))
+iris %>% group_by(Species) %>% summarize(meanSL = mean(Sepal.Length),varSl = var(Sepal.Length),sdSL = sd(Sepal.Length),medianSL = median(Sepal.Length))
+iris %>% group_by(Species) %>% summarize(meanSL = mean(Sepal.Length),
+mtcars %>% group_by(cyl) %>% summarize(mean(mpg))
+mtcars %>% group_by(cyl) %>% summarize(meanMPG = mean(mpg))
+mtcars %>% group_by(vs,am) %>% summarize(mean(mpg))
+iris %>% group_by(Species) %>% summarize(meanSL = mean(Sepal.Length),varSl = var(Sepal.Length),sdSL = sd(Sepal.Length),medianSL = median(Sepal.Length))
+mtcars %>% group_by(vs,am) %>% summarize(medianMPG = median(mpg))
+mtcars %>% select(1:4)
+mtcars %>% select(1:drat)
+mtcars %>% select(cyl:vs)
+mtcars %>% select(2:4, everything() )
+mtcars %>% mutate(sqrtMPG = sqrt(mpg)) %>% head(5)
+mtcars %>% mutate(sqrtQSEC = sqrt(qsec)) %>% head(5)
+mtcars %>% mutate(sqrtMPG = sqrt(mpg),logMPG = log(mpg)) %>% head(5)
+mtcars %>% select(2:carb, everything() )
+mtcars %>% mutate(sqrtMPG = sqrt(mpg),logMPG = log(mpg)) %>% select(2:carb, everything()) %>%  head(5)
+
+
+
+
 
